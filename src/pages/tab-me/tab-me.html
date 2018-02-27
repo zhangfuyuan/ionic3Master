@@ -1,0 +1,87 @@
+<ion-header id="header">
+  <div class="header-left">
+    <img src="assets/imgs/common/back.png"/>
+  </div>
+  <div class="header-center">
+    <span>登录</span>
+  </div>
+  <div class="header-right">
+    <span></span>
+  </div>
+
+
+</ion-header>
+
+
+<ion-content class="content">
+
+  <div *ngIf="isNotLogin; else onLogin">
+    <ion-input id="user_name"
+               placeholder="用户名/邮箱/已验证手机"
+               style="padding-left: 15px"
+               [(ngModel)]="loginName"></ion-input>
+    <div class="div_password_conetnt">
+      <ion-input id="user_password"
+                 placeholder="请输入密码"
+                 clearInput
+                 type="password"
+                 style="padding-left: 15px"
+                 [(ngModel)]="loginPsw"></ion-input>
+      <ion-toggle [(ngModel)]="pepperoni" style="margin-top: 2px;margin-right: 5px"></ion-toggle>
+    </div>
+    <div class="div_password_conetnt">
+      <ion-input id="code_password" placeholder="请输入验证码" style="padding-left: 15px"></ion-input>
+      <p>|</p>
+      <img width="20%" height="43px" src="assets/imgs/common/verify_code.jpg">
+    </div>
+
+    <div id="btn_login" (click)="login()">
+      <div style="color:gray">登录</div>
+    </div>
+    <div id="onetep_btn_login">
+      <div style="color: red">注册</div>
+    </div>
+    <div class="div_login_check">
+      <ion-checkbox id="checkbox_login" [(ngModel)]="mushrooms" color="red"></ion-checkbox>
+      <div style=" margin-left:5px;color: black "> 一个月内免登陆</div>
+    </div>
+    <div class="div_bttom_function">
+      <div style="display: flex;align-items:center">
+        <img src="assets/imgs/common/return_password.png" width="24px" height="24px"/>
+        <p>找回密码</p>
+      </div>
+
+      <div style="display: flex; align-items:center">
+        <img src="assets/imgs/common/register.png" width="24px" height="24px"/>
+        <p>快速注册</p>
+      </div>
+    </div>
+    <div style="display: flex;align-items:center; margin-left: 5%;
+    margin-right: 5%; width: 90%" >
+      <p style="width:30%;height:1px;background-color: #5d5d5d;margin-right: 5% " ></p>
+      <p style="color: #5d5d5d " >其他登录方式</p>
+      <p style="width:30%;height:1px;background-color: #5d5d5d;margin-left: 5% " ></p>
+    </div>
+    <div style="display: flex;flex-direction: column;align-items: center">
+      <img src="assets/imgs/common/qq.png"  width="24px" height="24px"/>
+      <p>QQ</p>
+    </div>
+  </div>
+
+  <ng-template #onLogin>
+    <div flex="main:center">欢迎 {{ nickname }} 回来！</div>
+
+    <div flex="main:center"><button ion-button (click)="logout()">登出</button></div>
+  </ng-template>
+
+  <br>
+
+  <button ion-button (click)="startPage('Detail')" full>商品详情页</button>
+
+  <button ion-button (click)="startPage('Entry')" full>登入页面</button>
+
+  <button ion-button (click)="startPage('Goods')" full>商品列表</button>
+
+  <button ion-button (click)="startPage('Pay')" full>支付页面</button>
+
+</ion-content>

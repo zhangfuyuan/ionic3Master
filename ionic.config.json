@@ -1,0 +1,14 @@
+{
+  "name": "master",
+  "app_id": "3aad9716",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:3000"
+    }
+  ]
+}
