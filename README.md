@@ -1,4 +1,4 @@
-# Master
+# ionic3Master
 
   基于 Ionic + Angular + Cordova 的商城 HybridApp
   
